@@ -3,8 +3,8 @@ input {
 }
 
 .calculator {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,4 +25,15 @@ input {
 .span-4 {
     grid-column: span 4;
 }
-
+#field{
+    font-size: 1.5rem;
+}
+.heading{
+    font-size: 3rem;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.operator{
+    font-size: 1.5rem;
+}
