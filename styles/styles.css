@@ -5,13 +5,16 @@ input {
 .calculator {
     width: 300px;
     height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.app {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .span-1 {
@@ -25,15 +28,16 @@ input {
 .span-4 {
     grid-column: span 4;
 }
-#field{
+
+#field {
     font-size: 1.5rem;
 }
-.heading{
+
+.heading {
     font-size: 3rem;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
+    text-align: center;
 }
-.operator{
+
+.operator {
     font-size: 1.5rem;
 }
