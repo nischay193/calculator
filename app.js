@@ -51,6 +51,7 @@ function keyboardListener(event) {
         case "*":
         case "-":
         case "+":
+        case ".":
             fieldText += symbol;
             break;
     }
@@ -67,4 +68,6 @@ buttons.forEach(button => {
 
 // Keyboard Listeners
 document.addEventListener("keydown", keyboardListener);
+
+
 
