@@ -1,5 +1,5 @@
 var fieldText = "";
-
+const field = document.getElementById("field");
 function eval_string(str) {
     try {
         return String(eval(str));
@@ -24,7 +24,6 @@ function handleClick(event) {
             fieldText += symbol;
             break;
     }
-    const field = document.getElementById("field");
     field.value = fieldText;
 }
 
@@ -52,6 +51,8 @@ function keyboardListener(event) {
         case "-":
         case "+":
         case ".":
+        case "(":
+        case ")":
             fieldText += symbol;
             break;
     }
@@ -59,6 +60,23 @@ function keyboardListener(event) {
     field.value = fieldText;
 }
 
+function validate(evt) {
+    var theEvent = evt || window.event;
+
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+        // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\.|\(|\)|\+|\-|\/|\*/;
+    if (!regex.test(key)) {
+        theEvent.returnValue = false;
+        if (theEvent.preventDefault) theEvent.preventDefault();
+    }
+}
 const buttons = document.querySelectorAll("button");
 
 // add button listeners
@@ -68,6 +86,14 @@ buttons.forEach(button => {
 
 // Keyboard Listeners
 document.addEventListener("keydown", keyboardListener);
+field.addEventListener("focus", () => {
+    document.removeEventListener("keydown", keyboardListener);
+});
+field.addEventListener("focusout", () => {
+    document.addEventListener("keydown", keyboardListener);
+});
+
+
 
 
 

@@ -14,7 +14,7 @@
 <body>
     <div class="heading"> Calculator</div>
     <div class="calculator">
-        <input type="text" id="field" name="" class="span-4 form-control" readonly="readonly" id="">
+        <input type="text" id="field" name="" class="span-4 form-control" onkeypress='validate(event)' id="">
         <button class="span-1 btn btn-primary">C</button>
         <button class="span-1 btn btn-light">.</button>
         <button class="span-1 btn btn-light">⌫︁</button>
@@ -31,8 +31,10 @@
         <button class="span-1 number btn btn-light">2</button>
         <button class="span-1 number btn btn-light">3</button>
         <button class="span-1 operator btn btn-warning">+</button>
-        <button class="span-2 number btn btn-light">0</button>
-        <button class="span-2 btn btn-success">=</button>
+        <button class="span-1 number btn btn-light">0</button>
+        <button class="span-1 number btn btn-light">(</button>
+        <button class="span-1 number btn btn-light">)</button>
+        <button class="span-1 btn btn-success">=</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
